@@ -1,1 +1,1 @@
-**Views Photo Gallery For Drupal 7**
+##Views Photo Gallery For Drupal 7##
