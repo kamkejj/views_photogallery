@@ -5,12 +5,12 @@
  */
 
 /**
- * Implementation of hook_field_default_fields().
+ * Implements hook_field_default_fields().
  */
 function views_photogallery_field_default_fields() {
   $fields = array();
 
-  // Exported field: 'node-gallery-body'
+  // Exported field: 'node-gallery-body'.
   $fields['node-gallery-body'] = array(
     'field_config' => array(
       'active' => '1',
@@ -33,6 +33,7 @@ function views_photogallery_field_default_fields() {
           0 => 'format',
         ),
       ),
+      'locked' => '0',
       'module' => 'text',
       'settings' => array(),
       'translatable' => '0',
@@ -84,7 +85,7 @@ function views_photogallery_field_default_fields() {
     ),
   );
 
-  // Exported field: 'node-gallery_photo-field_gallery'
+  // Exported field: 'node-gallery_photo-field_gallery'.
   $fields['node-gallery_photo-field_gallery'] = array(
     'field_config' => array(
       'active' => '1',
@@ -105,6 +106,7 @@ function views_photogallery_field_default_fields() {
           0 => 'nid',
         ),
       ),
+      'locked' => '0',
       'module' => 'node_reference',
       'settings' => array(
         'referenceable_types' => array(
@@ -153,6 +155,7 @@ function views_photogallery_field_default_fields() {
         'active' => 1,
         'module' => 'nodereference_url',
         'settings' => array(
+          'autocomplete_match' => 'contains',
           'edit_fallback' => 1,
           'fallback' => 'select',
           'node_link' => array(
@@ -169,7 +172,7 @@ function views_photogallery_field_default_fields() {
     ),
   );
 
-  // Exported field: 'node-gallery_photo-field_gallery_photo'
+  // Exported field: 'node-gallery_photo-field_gallery_photo'.
   $fields['node-gallery_photo-field_gallery_photo'] = array(
     'field_config' => array(
       'active' => '1',
@@ -190,6 +193,7 @@ function views_photogallery_field_default_fields() {
           0 => 'fid',
         ),
       ),
+      'locked' => '0',
       'module' => 'image',
       'settings' => array(
         'default_image' => 0,
@@ -205,8 +209,12 @@ function views_photogallery_field_default_fields() {
       'display' => array(
         'default' => array(
           'label' => 'hidden',
-          'settings' => array(),
-          'type' => 'hidden',
+          'module' => 'image',
+          'settings' => array(
+            'image_link' => '',
+            'image_style' => 'gallery_large',
+          ),
+          'type' => 'image',
           'weight' => '1',
         ),
         'teaser' => array(
@@ -222,6 +230,7 @@ function views_photogallery_field_default_fields() {
       'required' => 1,
       'settings' => array(
         'alt_field' => 1,
+        'default_image' => 0,
         'file_directory' => '',
         'file_extensions' => 'png gif jpg jpeg',
         'max_filesize' => '',

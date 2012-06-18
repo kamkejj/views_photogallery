@@ -5,7 +5,7 @@
  */
 
 /**
- * Implementation of hook_views_default_views().
+ * Implements hook_views_default_views().
  */
 function views_photogallery_views_default_views() {
   $export = array();
@@ -17,7 +17,7 @@ function views_photogallery_views_default_views() {
   $view->base_table = 'node';
   $view->human_name = 'Gallery Photos';
   $view->core = 7;
-  $view->api_version = '3.0-alpha1';
+  $view->api_version = '3.0';
   $view->disabled = FALSE; /* Edit this to true to make a default view disabled initially */
 
   /* Display: Master */
@@ -64,6 +64,7 @@ function views_photogallery_views_default_views() {
   $handler->display->display_options['fields']['field_gallery_photo']['alter']['nl2br'] = 0;
   $handler->display->display_options['fields']['field_gallery_photo']['alter']['word_boundary'] = 1;
   $handler->display->display_options['fields']['field_gallery_photo']['alter']['ellipsis'] = 1;
+  $handler->display->display_options['fields']['field_gallery_photo']['alter']['more_link'] = 0;
   $handler->display->display_options['fields']['field_gallery_photo']['alter']['strip_tags'] = 0;
   $handler->display->display_options['fields']['field_gallery_photo']['alter']['trim'] = 0;
   $handler->display->display_options['fields']['field_gallery_photo']['alter']['html'] = 0;
@@ -73,13 +74,9 @@ function views_photogallery_views_default_views() {
   $handler->display->display_options['fields']['field_gallery_photo']['empty_zero'] = 0;
   $handler->display->display_options['fields']['field_gallery_photo']['hide_alter_empty'] = 0;
   $handler->display->display_options['fields']['field_gallery_photo']['click_sort_column'] = 'fid';
-  $handler->display->display_options['fields']['field_gallery_photo']['type'] = 'shadowbox';
   $handler->display->display_options['fields']['field_gallery_photo']['settings'] = array(
     'image_style' => 'gallery_thumb',
-    'image_link' => 'gallery_large',
-    'gallery' => 'page',
-    'compact' => 0,
-    'title' => 'node',
+    'image_link' => 'content',
   );
   $handler->display->display_options['fields']['field_gallery_photo']['field_api_classes'] = 0;
   /* Sort criterion: Content: Post date */
